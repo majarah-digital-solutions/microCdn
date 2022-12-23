@@ -7,7 +7,7 @@ services:
       target: development
     restart: always
     ports:
-      - 10000:3000
+      - 11000:3000
     volumes:
       - ../../src:/microCdn/src:ro
       - ../../public:/microCdn/public
