@@ -17,11 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-// app.use(bodyParser.raw({
-//     inflate: true,
-//     limit: 1024 * 1024,
-//     type: 'application/octet-stream'
-// }));
+app.use(bodyParser.raw({
+    inflate: true,
+    limit: 1024 * 1024,
+    type: 'application/octet-stream'
+}));
 
 app.use('/', require('./routes/base'));
 app.use('/v2', require('./routes/v2'));
