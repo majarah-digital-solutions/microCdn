@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.raw({
     inflate: true,
-    limit: 1024 * 1024,
+    limit: 1024 * 1024 * 2,
     type: 'application/octet-stream'
 }));
 
