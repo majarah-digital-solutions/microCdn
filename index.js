@@ -6,7 +6,18 @@
 
 var app = require('./src/app');
 var debug = require('debug')('microcdn:server');
-var http = require('http');
+var https = require('https');
+const fs = require('fs');
+
+const certificate = fs.readFileSync('./ssl/certificate.crt');
+const ca_bundle = fs.readFileSync('./ssl/ca_bundle.crt');
+const private = fs.readFileSync('./ssl/private.key');
+
+let options = {
+  cert: certificate, // fs.readFileSync('./ssl/example.crt');
+  ca: ca_bundle, // fs.readFileSync('./ssl/example.ca-bundle');
+  key: private // fs.readFileSync('./ssl/example.key');
+};
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +30,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer(options,app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -82,6 +93,7 @@ function onError(error) {
  */
 
 function onListening() {
+  console.info('listening On ' , port)
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr

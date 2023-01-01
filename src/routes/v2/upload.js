@@ -37,7 +37,8 @@ router.post('/', async (req, res, next) => {
 
     fileName = await convert({
       buffer:combinedBuffer,
-      path:IMAGES_DIR
+      path:IMAGES_DIR,
+      quality:70
     })
 
     // Remove the chunked files
