@@ -6,7 +6,7 @@ WORKDIR /microCdn
 COPY package.json .
 RUN yarn install
 COPY . .
-EXPOSE 3000
+EXPOSE 15000
 CMD ["yarn","dev"]
 
 FROM base as production

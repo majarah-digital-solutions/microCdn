@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
             var imageSize = sizeOf(buffer);
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-' + Math.round(Math.random() * 1E9) + ".png"   
             await sharp(buffer)
-                .flatten( { background: '#fff' } )
+                // .flatten( { background: '#fff' } )
                 // .composite([
                 //     { input: './public/logo.svg',  top: (300-60), left: (10) , blend: "atop"}
                 // ])

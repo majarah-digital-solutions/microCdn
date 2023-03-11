@@ -6,18 +6,8 @@
 
 var app = require('./src/app');
 var debug = require('debug')('microcdn:server');
-var https = require('https');
+var http = require('http');
 const fs = require('fs');
-
-const certificate = fs.readFileSync('./ssl/certificate.crt');
-const ca_bundle = fs.readFileSync('./ssl/ca_bundle.crt');
-const private = fs.readFileSync('./ssl/private.key');
-
-let options = {
-  cert: certificate, // fs.readFileSync('./ssl/example.crt');
-  ca: ca_bundle, // fs.readFileSync('./ssl/example.ca-bundle');
-  key: private // fs.readFileSync('./ssl/example.key');
-};
 
 /**
  * Get port from environment and store in Express.
@@ -30,7 +20,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = https.createServer(options,app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
