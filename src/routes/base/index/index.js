@@ -1,10 +1,9 @@
 var router = require("express").Router();
 
 router.get("/", (req, res, next) => {
-    // res.render("index",{
-    //     title:"Majarah",
-    // })
-    res.redirect("https://adumcar.com")
+    res.json({
+        status: "Success",
+    })
 });
 
 module.exports = router;
