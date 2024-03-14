@@ -5,10 +5,7 @@
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
-    "devstart": "docker-compose  -f ./docker/dev/docker-compose.yml up -d --build",
-    "devstop": "docker-compose  -f ./docker/dev/docker-compose.yml down",
-    "prodstart": "docker-compose  -f ./docker/prod/docker-compose.yml up -d --build",
-    "prodstop": "docker-compose  -f ./docker/prod/docker-compose.yml down"
+    "push": "git add -A && git commit -m 'save' && git push origin main"
   },
   "dependencies": {
     "buffer-image-size": "^0.6.4",
