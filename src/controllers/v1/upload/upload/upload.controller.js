@@ -22,9 +22,8 @@ module.exports = async (req, res, next) => {
             }
 
 
-            console.log("🚀 ~ module.exports= ~ imageSize:", "imageSizeimageSize")
-            var imageSize = sizeOf(buffer);
-            console.log("🚀 ~ module.exports= ~ imageSize:", imageSize)
+            // console.log("🚀 ~ module.exports= ~ imageSize:", "imageSizeimageSize")
+            // var imageSize = sizeOf(buffer);
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-' + Math.round(Math.random() * 1E9) + ".png"   
             console.log("🚀 ~ module.exports= ~ uniqueSuffix:", uniqueSuffix)
             await sharp(buffer)
