@@ -12,6 +12,7 @@ module.exports = async (req, res, next) => {
             console.log(element)
             var buffer = element.buffer;
             
+            console.log("🚀 ~ module.exports= ~ element.mimetype:", element.mimetype)
             if(element.mimetype.split("/")[1] === "heic"){
                 console.log("heic")
                 buffer = await convert({
