@@ -23,6 +23,7 @@ module.exports = async (req, res, next) => {
 
             var imageSize = sizeOf(buffer);
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-' + Math.round(Math.random() * 1E9) + ".png"   
+            console.log("🚀 ~ module.exports= ~ uniqueSuffix:", uniqueSuffix)
             await sharp(buffer)
                 // .flatten( { background: '#fff' } )
                 // .composite([
