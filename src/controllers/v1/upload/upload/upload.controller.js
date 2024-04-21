@@ -75,7 +75,7 @@ module.exports = async (req, res, next) => {
                 .toFile(`./public/images/${uniqueSuffix}`);
 
             arrayResponse.push(uniqueSuffix);
-        }ی
+        };
     
         res.status(200).json({ data: arrayResponse });
     } catch (error) {
