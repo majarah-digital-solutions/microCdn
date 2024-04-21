@@ -13,6 +13,7 @@ module.exports = async (req, res, next) => {
             var buffer = element.buffer;
             
             if(element.mimetype.split("/")[1] === "heic"){
+                console.log("heic")
                 buffer = await convert({
                   buffer: buffer, // the HEIC file buffer
                   format: 'JPEG',      // output format
@@ -21,7 +22,9 @@ module.exports = async (req, res, next) => {
             }
 
 
+            console.log("🚀 ~ module.exports= ~ imageSize:", "imageSizeimageSize")
             var imageSize = sizeOf(buffer);
+            console.log("🚀 ~ module.exports= ~ imageSize:", imageSize)
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-' + Math.round(Math.random() * 1E9) + ".png"   
             console.log("🚀 ~ module.exports= ~ uniqueSuffix:", uniqueSuffix)
             await sharp(buffer)
