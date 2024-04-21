@@ -9,6 +9,7 @@ const convert = require('heic-convert');
 module.exports = async (req, res, next) => {
         var arrayResponse = [];
         for (const element of req.files) {
+            console.log("----------------------------------------------------------------")
             console.log(element)
             var buffer = element.buffer;
             
