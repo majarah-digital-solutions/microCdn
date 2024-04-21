@@ -56,14 +56,14 @@ module.exports = async (req, res, next) => {
             console.log(element);
 
             let buffer = element.buffer;
-            if (element.mimetype.split("/")[1] === "heic") {
+            // if (element.mimetype.split("/")[1] === "heic") {
                 console.log("heic");
                 buffer = await convert({
                     buffer: buffer,
                     format: 'JPEG',
                     quality: 1
                 });
-            }
+            // }
 
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) + '-' + Math.round(Math.random() * 1E9) + ".png";
             console.log("🚀 ~ module.exports= ~ uniqueSuffix:", uniqueSuffix);
