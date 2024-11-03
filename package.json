@@ -16,7 +16,7 @@
     "errorhandler": "^1.5.1",
     "express": "~4.16.1",
     "express-formidable": "^1.2.0",
-    "heic-convert": "^1.2.4",
+    "heic-convert": "^2.1.0",
     "http-errors": "~1.6.3",
     "jimp": "^0.16.2",
     "morgan": "~1.9.1",
