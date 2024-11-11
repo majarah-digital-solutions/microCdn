@@ -35,7 +35,7 @@ module.exports = async (req, res, next) => {
             // رفع الصورة مباشرةً إلى S3
             const s3Response = await uploadFile({
                 file: processedBuffer,
-                newFilePath: `uploads/test/${uniqueSuffix}`,
+                newFilePath: `uploads/images/${uniqueSuffix}`,
                 ContentType: 'image/webp'
             });
             if(s3Response.Location){

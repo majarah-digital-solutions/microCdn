@@ -4,7 +4,7 @@ module.exports = async (req, res, next) => {
   res.removeHeader('X-Powered-By');
   const { file } = req.params;
   try {
-    const data = await getFile({ filePath: `uploads/test/${file}` });
+    const data = await getFile({ filePath: `uploads/images/${file}` });
     res.setHeader('Content-Type', 'image/webp');
     res.send(data);
   } catch (error) {
