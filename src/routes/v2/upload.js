@@ -14,11 +14,11 @@ const {Buffer} = require('node:buffer');
 const convert = require('../../utils/sharp/convert');
 /* GET home page. */
 
-const TEMP_DIR = 'public/temp';
-const IMAGES_DIR = 'public/images';
-if (!fs.existsSync(TEMP_DIR)) {
-    fs.mkdirSync(TEMP_DIR);
-  }
+// const TEMP_DIR = 'public/temp';
+// const IMAGES_DIR = 'public/images';
+// if (!fs.existsSync(TEMP_DIR)) {
+//     fs.mkdirSync(TEMP_DIR);
+//   }
   
 router.post('/', async (req, res, next) => {
   const {chunkindex, numchunks, fileid} = req.headers
