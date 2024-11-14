@@ -38,6 +38,7 @@ module.exports = async (req, res, next) => {
                 newFilePath: `uploads/images/${uniqueSuffix}`,
                 ContentType: 'image/webp'
             });
+            console.log("🚀 ~ module.exports= ~ s3Response:", s3Response)
             if(s3Response.Location){
                 arrayResponse.push(uniqueSuffix); // إضافة رابط الصورة على S3 إلى المصفوفة
             }
